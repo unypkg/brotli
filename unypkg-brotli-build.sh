@@ -35,7 +35,7 @@ mkdir -pv /uny/sources
 cd /uny/sources || exit
 
 pkgname="brotli"
-pkggit="https://github.com/brotli/brotli.git refs/tags/*"
+pkggit="https://github.com/google/brotli.git refs/tags/*"
 gitdepth="--depth=1"
 
 ### Get version info from git remote
@@ -77,12 +77,13 @@ get_include_paths
 
 unset LD_RUN_PATH
 
-./configure \
-    --prefix=/uny/pkg/"$pkgname"/"$pkgver"
+mkdir build
+cd build || exit
 
-make -j"$(nproc)"
-make -j"$(nproc)" check 
-make -j"$(nproc)" install
+cmake .. -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver"
+
+cmake --build . --config Release --target install
 
 ####################################################
 ### End of individual build script
