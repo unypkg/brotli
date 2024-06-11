@@ -81,6 +81,7 @@ mkdir build
 cd build || exit
 
 cmake .. -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_LIBDIR=/uny/pkg/"$pkgname"/"$pkgver"/lib \
     -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver"
 
 cmake --build . --config Release --target install
