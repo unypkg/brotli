@@ -86,6 +86,7 @@ cmake .. -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON \
 
 #cmake --build . --config Release --target install
 make -j$(nproc)
+make -j$(nproc) install
 
 ####################################################
 ### End of individual build script
