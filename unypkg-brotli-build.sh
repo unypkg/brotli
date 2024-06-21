@@ -80,11 +80,12 @@ unset LD_RUN_PATH
 mkdir build
 cd build || exit
 
-cmake .. -DCMAKE_BUILD_TYPE=Release \
+cmake .. -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON \
     -DCMAKE_INSTALL_LIBDIR=/uny/pkg/"$pkgname"/"$pkgver"/lib \
     -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver"
 
-cmake --build . --config Release --target install
+#cmake --build . --config Release --target install
+make -j$(nproc)
 
 ####################################################
 ### End of individual build script
