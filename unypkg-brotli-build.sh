@@ -80,7 +80,7 @@ unset LD_RUN_PATH
 mkdir build
 cd build || exit
 
-cmake .. -DBUILD_STATIC_LIBS=ON -DBUILD_SHARED_LIBS=ON \
+cmake .. -DBUILD_SHARED_LIBS=OFF -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_LIBDIR=/uny/pkg/"$pkgname"/"$pkgver"/lib \
     -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver"
 
