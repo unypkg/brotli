@@ -87,12 +87,12 @@ cmake .. -DBUILD_SHARED_LIBS=OFF -DCMAKE_BUILD_TYPE=Release \
 make -j$(nproc)
 make -j$(nproc) install
 
-cmake .. -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_LIBDIR=/uny/pkg/"$pkgname"/"$pkgver"/lib \
-    -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver"
+#cmake .. -DBUILD_SHARED_LIBS=ON -DCMAKE_BUILD_TYPE=Release \
+#    -DCMAKE_INSTALL_LIBDIR=/uny/pkg/"$pkgname"/"$pkgver"/lib \
+#    -DCMAKE_INSTALL_PREFIX=/uny/pkg/"$pkgname"/"$pkgver"
 
-make -j$(nproc)
-make -j$(nproc) install
+#make -j$(nproc)
+#make -j$(nproc) install
 
 ####################################################
 ### End of individual build script
